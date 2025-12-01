@@ -1,79 +1,101 @@
-<!doctype html>
-<div class="brand">
-<h2>DataInsight<br><span>Genie</span></h2>
-</div>
-<div class="controls">
-<label class="file-label">
-<input id="fileInput" type="file" accept=".csv, .xlsx, .xls" />
-<span>Select CSV (or drag & drop)</span>
-</label>
-<button id="sampleBtn" class="btn">Use Sample Data</button>
-<hr />
-<div class="selector">
-<label>Numeric column</label>
-<select id="numericSelect"></select>
-</div>
-<div class="selector">
-<label>Date column</label>
-<select id="dateSelect"></select>
-</div>
-<div class="selector">
-<label>Categorical column</label>
-<select id="catSelect"></select>
-</div>
-<button id="analyzeBtn" class="btn primary">Analyze Data</button>
-<button id="exportPdfBtn" class="btn">Export PDF</button>
-</div>
-<footer class="sidebar-footer">
-<small>Built by Purva — DataInsight Genie</small>
-</footer>
-</aside>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataInsight Genie</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<main class="main">
-<header class="topbar">
-<h1>Dashboard</h1>
-<div class="search">
-<input id="searchInput" placeholder="Search columns or values" />
-</div>
-</header>
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<section class="kpis" id="kpiWrapper">
-<!-- KPI cards will be injected here -->
-</section>
+<body>
 
+    <!-- HEADER / NAVBAR -->
+    <header class="header">
+        <h1>✨ DataInsight Genie</h1>
+        <p>Your AI-powered Data Analysis Dashboard</p>
+    </header>
 
-<section class="charts">
-<div class="card">
-<h3>Time Series</h3>
-<canvas id="timeSeriesChart"></canvas>
-</div>
-<div class="card">
-<h3>Top Categories</h3>
-<canvas id="barChart"></canvas>
-</div>
-<div class="card full">
-<h3>Correlation Matrix</h3>
-<canvas id="corrChart"></canvas>
-</div>
-</section>
+    <!-- UPLOAD SECTION -->
+    <section class="card">
+        <h2>📂 Upload Your Dataset</h2>
+        <p>Select a CSV file to begin analysis</p>
 
+        <input type="file" id="csvFile" accept=".csv" class="file-input">
 
-<section class="insights">
-<div class="card">
-<h3>Auto Insights</h3>
-<div id="insightsList"></div>
-</div>
-<div class="card">
-<h3>Data Preview (first 10 rows)</h3>
-<div id="previewTable" class="table-scroll"></div>
-</div>
-</section>
-</main>
-</div>
+        <button class="btn" id="useSample">Use Sample Data</button>
+    </section>
 
+    <!-- COLUMN SELECTORS -->
+    <section class="card">
+        <h2>⚙️ Select Columns</h2>
 
-<script src="app.js"></script>
+        <div class="grid-3">
+            <div>
+                <label>Numeric Column</label>
+                <select id="numericColumn"></select>
+            </div>
+
+            <div>
+                <label>Date Column</label>
+                <select id="dateColumn"></select>
+            </div>
+
+            <div>
+                <label>Categorical Column</label>
+                <select id="categoryColumn"></select>
+            </div>
+        </div>
+
+        <button class="btn analyze" id="analyzeBtn">Analyze Data</button>
+    </section>
+
+    <!-- PREVIEW SECTION -->
+    <section class="card">
+        <h2>🔍 Data Preview (First 10 Rows)</h2>
+        <div id="preview" class="table-container"></div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="card">
+        <h2>📊 Dashboard</h2>
+
+        <div class="chart-container">
+            <h3>📈 Time Series</h3>
+            <div id="timeSeries"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3>🏷 Top Categories</h3>
+            <div id="categoryChart"></div>
+        </div>
+
+        <div class="chart-container">
+            <h3>🔢 Correlation Matrix</h3>
+            <div id="correlationMatrix"></div>
+        </div>
+    </section>
+
+    <!-- INSIGHTS -->
+    <section class="card">
+        <h2>🤖 Auto Insights</h2>
+        <div id="insights"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Built with ❤️ by <b>Purva</b> — DataInsight Genie</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+
 </body>
 </html>

@@ -1,44 +1,110 @@
-:root{
---bg: #0f1724;
---card: #0b1220;
---muted: #94a3b8;
---accent: #7c3aed;
---accent-2: #06b6d4;
+/* GLOBAL STYLING */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
 }
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,#071022 0%,#071020 100%);color:#e6eef8}
-.container{display:flex;min-height:100vh}
-.sidebar{width:320px;padding:24px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-right:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column}
-.brand h2{margin:0;font-weight:700;line-height:0.95}
-.brand span{color:var(--accent)}
-.controls{margin-top:18px}
-.file-label{display:block;background:#0b1117;padding:10px;border-radius:8px;border:1px dashed rgba(255,255,255,0.03);cursor:pointer;text-align:center}
-.file-label input{display:none}
-.btn{width:100%;padding:10px;border-radius:8px;margin-top:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);cursor:pointer}
-.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none}
-.selector{margin-top:10px}
-.selector label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
-.selector select{width:100%;padding:8px;border-radius:6px;background:#071022;border:1px solid rgba(255,255,255,0.03);color:#e6eef8}
-.sidebar-footer{margin-top:auto;font-size:12px;color:var(--muted)}
 
+h1, h2, h3 {
+    margin: 0 0 10px;
+}
 
-.main{flex:1;padding:24px}
-.topbar{display:flex;justify-content:space-between;align-items:center}
-.topbar h1{margin:0}
-.kpis{display:flex;gap:16px;margin-top:18px}
-.kpi{flex:1;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
-.kpi .title{color:var(--muted);font-size:13px}
-.kpi .value{font-size:22px;font-weight:700;margin-top:6px}
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
 
+.header p {
+    opacity: 0.9;
+}
 
-.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
-.card.full{grid-column:1/-1}
-.insights{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.table-scroll{max-height:240px;overflow:auto}
-.preview-table{width:100%;border-collapse:collapse}
-.preview-table th, .preview-table td{padding:6px;border-bottom:1px solid rgba(255,255,255,0.03);font-size:13px}
-#insightsList p{margin:6px 0;color:#dbeafe}
+/* CARD / SECTIONS */
+.card {
+    background: white;
+    margin: 25px auto;
+    width: 90%;
+    max-width: 1000px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
 
+/* GRID */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
-@media (max-width:900px){.container{flex-direction:column}.sidebar{width:100%;display:flex;order:2}.main{order:1;padding:12px}.charts{grid-template-columns:1fr}}
+/* INPUTS */
+.file-input {
+    margin-top: 10px;
+    padding: 12px;
+    border: 2px dashed #2575fc;
+    width: 100%;
+    border-radius: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1.5px solid #ddd;
+    margin-top: 5px;
+    background: #fff;
+}
+
+/* BUTTONS */
+.btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #6a11cb;
+}
+
+.analyze {
+    width: 100%;
+    font-size: 18px;
+}
+
+/* TABLE */
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-container th, td {
+    padding: 10px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+}
+
+/* CHARTS */
+.chart-container {
+    margin-top: 30px;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+    margin-bottom: 40px;
+}

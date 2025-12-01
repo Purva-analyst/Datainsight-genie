@@ -1,0 +1,79 @@
+<!doctype html>
+<div class="brand">
+<h2>DataInsight<br><span>Genie</span></h2>
+</div>
+<div class="controls">
+<label class="file-label">
+<input id="fileInput" type="file" accept=".csv, .xlsx, .xls" />
+<span>Select CSV (or drag & drop)</span>
+</label>
+<button id="sampleBtn" class="btn">Use Sample Data</button>
+<hr />
+<div class="selector">
+<label>Numeric column</label>
+<select id="numericSelect"></select>
+</div>
+<div class="selector">
+<label>Date column</label>
+<select id="dateSelect"></select>
+</div>
+<div class="selector">
+<label>Categorical column</label>
+<select id="catSelect"></select>
+</div>
+<button id="analyzeBtn" class="btn primary">Analyze Data</button>
+<button id="exportPdfBtn" class="btn">Export PDF</button>
+</div>
+<footer class="sidebar-footer">
+<small>Built by Purva — DataInsight Genie</small>
+</footer>
+</aside>
+
+
+<main class="main">
+<header class="topbar">
+<h1>Dashboard</h1>
+<div class="search">
+<input id="searchInput" placeholder="Search columns or values" />
+</div>
+</header>
+
+
+<section class="kpis" id="kpiWrapper">
+<!-- KPI cards will be injected here -->
+</section>
+
+
+<section class="charts">
+<div class="card">
+<h3>Time Series</h3>
+<canvas id="timeSeriesChart"></canvas>
+</div>
+<div class="card">
+<h3>Top Categories</h3>
+<canvas id="barChart"></canvas>
+</div>
+<div class="card full">
+<h3>Correlation Matrix</h3>
+<canvas id="corrChart"></canvas>
+</div>
+</section>
+
+
+<section class="insights">
+<div class="card">
+<h3>Auto Insights</h3>
+<div id="insightsList"></div>
+</div>
+<div class="card">
+<h3>Data Preview (first 10 rows)</h3>
+<div id="previewTable" class="table-scroll"></div>
+</div>
+</section>
+</main>
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
